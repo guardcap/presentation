@@ -1,0 +1,6 @@
+schema_version,policy_id,statement,effect,entity_type,params,tags,paraphrases,meta
+v1,B-1001,"사외 공개 시 휴대전화번호는 마지막 4자리만 공개한다.",PARTIAL,PHONE_NUMBER,"{""keep_last"":4,""separator"":""-""}","사외,WEB","[""외부 게시물의 휴대전화는 뒷 4자리만 노출"",""대외 공개 연락처는 마지막 네 자리만 표시""]",
+v1,B-1002,"당첨자 발표 시 성명은 성+이름 1글자만 공개한다.",PARTIAL,PERSON_NAME,"{""keep_first"":1,""mask_char"":""○""}","사외,WEB,당첨자 발표","[""성명은 성과 이름 첫 글자만 허용""]",
+v1,B-1003,"사내 인사이동 공지에서 휴대전화 번호는 공개하지 않는다(내선만 허용).",FORBID,PHONE_NUMBER,"{}","사내,EMAIL,WEB","[""인사 공지에서는 내선 외 휴대폰 비공개""]",
+v1,B-1004,"외부 공개 문서에서 이메일은 도메인만 표시한다.",PARTIAL,EMAIL_ADDRESS,"{""keep_domain"":true,""keep_local"":0}","사외,WEB,PRESS","[""메일주소는 @이후 도메인만 노출""]",
+v1,B-1005,"주소 공개는 시/구 수준으로 제한한다.",PARTIAL,ADDRESS,"{""granularity"":""city_district""}","사외,WEB","[""주소는 시·구까지만""]",
